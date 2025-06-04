@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products - Banana Powder</title>
+    <link rel="stylesheet" href="C:\Users\91868\OneDrive\Desktop\Backend practice\CSS's\style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div style="color: #d8e7d3; font-weight: 600;" class="logo">Banana Powder</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="products.html">Products</a>
+            <a href="index.html#contact">Contact</a>
+            <!-- <a href="recipes.html">Recipes</a> -->
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="fade-in-up" style="color: #F4C430;">Discover Our Banana Powder Range</h1>
+        <p class="fade-in-up-delay scroll-reveal-text" style="color: #4B4B4B; max-width: 800px; margin: 20px auto;">
+            Explore our selection of premium banana powders, crafted for purity, nutrition, and versatility. Find the perfect fit for your healthy lifestyle!
+        </p>
+
+        <section id="products-container" class="products-grid">
+            </section>
+    </main>
+
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div class="modal-body">
+                <img id="modal-product-image" src="" alt="Product Image">
+                <div class="modal-details">
+                    <h2 id="modal-product-title" style="color: #bd7434;"></h2>
+                    <p id="modal-product-description" style="color: #4B4B4B;"></p>
+                    <div id="modal-product-price" style="color: #db335d; font-size: 1.6rem; font-weight: bold; margin-bottom: 20px;"></div>
+                    <button class="cta-button add-to-cart-btn">Add to Cart</button>
+                    <div class="additional-info" style="color: #4B4B4B; margin-top: 20px; font-size: 0.9rem;">
+                        <h3>Key Features:</h3>
+                        <ul id="modal-product-features" style="text-align: left; list-style-type: disc; margin-left: 20px;"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="kinda">
+        @all rights are received 2025.
+    </footer>
+    <script src="C:\Users\91868\OneDrive\Desktop\Backend practice\JS's\script.js"></script>
+</body>
+</html>

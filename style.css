@@ -1,0 +1,531 @@
+html {
+    font-size: 22px;
+    scroll-behavior: smooth;
+}
+body {
+    background-color: #FFFBEA;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding-top: 0;
+    color: #4B4B4B;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+footer {
+    background-color: #bd7434;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    margin-top: 80px;
+    position: relative;
+    clear: both;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #db335d;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    transition: transform 0.3s ease, color 0.3s ease;
+    font-weight: 500;
+}
+
+.navbar a:hover {
+    transform: scale(1.1);
+    color: #fce8a8;
+}
+
+.navbar a.active-nav-link {
+    font-weight: bold;
+    color: #fce8a8;
+    border-bottom: 2px solid #fce8a8;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    color: #F4C430;
+}
+
+.intro-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 50px auto;
+}
+
+@media (min-width: 768px) {
+    .intro-section {
+        flex-direction: row;
+        text-align: left;
+    }
+    .intro-text {
+        flex: 1;
+    }
+    .main-product-image {
+        flex-shrink: 0;
+        max-width: 400px;
+        height: auto;
+    }
+}
+
+.main-product-image {
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+    border-radius: 15px;
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 25px;
+    margin-top: 20px;
+    background-color: #F4C430;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #ca1563;
+    transform: translateY(-3px);
+}
+
+.Table {
+    margin-top: 50px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+form {
+    max-width: 360px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 8px 8px;
+    margin-bottom: 14px;
+    border: 1px solid #e7af17;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 50px;
+}
+
+form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #F4C430;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+form button:hover {
+    background-color: #ca1563;
+}
+
+.products-grid, .recipes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 50px auto;
+}
+
+.product-card, .recipe-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.product-card:hover, .recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.product-image, .recipe-image {
+    width: 100%;
+    max-width: 250px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.product-title, .recipe-title {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.product-description, .recipe-description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.product-price {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.add-to-cart-btn, .view-recipe-btn {
+    width: 80%;
+    padding: 10px 15px;
+    font-size: 0.95rem;
+    margin-top: auto;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 40px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 900px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    animation: fadeInScale 0.3s ease-out forwards;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+
+.modal-body img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+}
+
+.modal-details {
+    text-align: left;
+    flex-grow: 1;
+}
+
+.modal-details h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 2rem;
+}
+
+.modal-details p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #db335d;
+    text-decoration: none;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* --- Core Scroll Reveal Classes --- */
+/* These classes are applied to elements that should animate on scroll */
+.scroll-reveal-text, .scroll-reveal-image, .scroll-reveal-item {
+    opacity: 0;
+    transform: translateY(20px); /* Default slight lift */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* This class is added by JS when element is in view */
+.scroll-reveal-text.revealed, .scroll-reveal-image.revealed, .scroll-reveal-item.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Specific Animations --- */
+
+/* Fade In Up (for main headings/hero text) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.fade-in-up {
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: 0.3s;
+    opacity: 0;
+}
+
+/* Fade In Left (for text/elements coming from left) */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.fade-in-left.revealed {
+    animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+/* Fade In Right (for text/elements coming from right) */
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.fade-in-right.revealed {
+    animation: fadeInRight 0.8s ease-out forwards;
+}
+
+/* Zoom In (for images, etc.) */
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+/* Removed .zoom-in.revealed for product cards here to allow new animation */
+.zoom-in.revealed {
+    animation: zoomIn 1s ease-out forwards;
+}
+
+
+/* Slide In Bottom (for sub-headings) */
+@keyframes slideInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.slide-in-bottom.revealed {
+    animation: slideInBottom 0.8s ease-out forwards;
+    animation-delay: 0.2s;
+}
+
+/* Fade In Up with Delay (for paragraphs, list items) */
+@keyframes fadeInUpWithDelay {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.fade-in-up-delay { /* General class for elements that should animate slightly delayed on initial load or scroll */
+    animation: fadeInUpWithDelay 0.6s ease-out forwards;
+    animation-delay: 0.5s;
+    opacity: 0;
+}
+.fade-in-up-delay.revealed {
+    animation: fadeInUpWithDelay 0.6s ease-out forwards;
+}
+.fade-in-up-delay.revealed li { /* Specific for list items in About Us section */
+    animation: fadeInUpWithDelay 0.6s ease-out forwards;
+    opacity: 0;
+}
+.fade-in-up-delay.revealed li:nth-child(1) { animation-delay: 0.3s; }
+.fade-in-up-delay.revealed li:nth-child(2) { animation-delay: 0.5s; }
+.fade-in-up-delay.revealed li:nth-child(3) { animation-delay: 0.7s; }
+.fade-in-up-delay.revealed li:nth-child(4) { animation-delay: 0.9s; }
+
+/* --- NEW: Product Card Showcase Animation --- */
+@keyframes productShowcaseEntry {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.9);
+        filter: blur(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+.product-card.revealed {
+    animation: productShowcaseEntry 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; /* Smoother curve */
+    /* animation-delay will be set by JS */
+}
+
+/* Responsive adjustments for modal */
+@media (min-width: 768px) {
+    .modal-body {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .modal-body img {
+        max-width: 40%;
+        margin-right: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 18px;
+    }
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+    .navbar nav {
+        margin-top: 10px;
+    }
+    .navbar a {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+    main {
+        padding: 10px;
+    }
+    .main-product-image {
+        width: 100%;
+        height: auto;
+    }
+    .values-section {
+        padding: 20px;
+        margin-top: 50px;
+    }
+    .values-section ul li {
+        font-size: 1rem;
+    }
+    .products-grid, .recipes-grid {
+        grid-template-columns: 1fr;
+        padding: 20px 10px;
+    }
+    .modal-content {
+        padding: 20px;
+    }
+    .modal-body {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .modal-body img {
+        max-width: 80%;
+    }
+    .modal-details h2 {
+        font-size: 1.5rem;
+    }
+    .modal-details p {
+        font-size: 0.9rem;
+    }
+}
