@@ -56,6 +56,25 @@ Follow the instructions below to run the project locally.
 - Git (optional)
 - A modern web browser
 
-### Installation
+banana-powder-ecommerce/
+│
+├── static/ # CSS, JS, images
+│ ├── css/
+│ ├── js/
+│ └── images/
+│
+├── templates/ # HTML templates
+│ ├── index.html
+│ ├── about.html
+│ ├── products.html
+│ └── recipes.html
+│
+├── contact_submissions.json # Stores form submissions
+├── app.py # Flask backend
+├── requirements.txt # Python dependencies
+└── README.md
 
-1. Clone the repository:
+markdown
+Copy
+Edit
+
